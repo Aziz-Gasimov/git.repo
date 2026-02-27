@@ -1,0 +1,10 @@
+---
+- name: istifadecini muveqqeti kilidlemek (disable)
+  hosts: prod
+  become: yes
+  tasks:
+    - name: istifadecini kilidlemek
+      user:
+        name: nurlang
+        password_lock: yes  # Hesabi kilitle (şifre girişin engelle)
+        shell: /sbin/nologin  # shell girisin de bagla (güvenlik)
